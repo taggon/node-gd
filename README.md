@@ -17,16 +17,17 @@ npm install gd
 
 ## Using GD
 
-var fs   = require('fs');
-var path = require('path');
-var gd   = require('gd');
+app.js:
+    var fs   = require('fs');
+    var path = require('path');
+    var gd   = require('gd');
+    
+    var source = './test.png';
+    var target = './test.thumb.png';
 
-var source = './test.png';
-var target = './test.thumb.png';
+    if (path.exists(target)) fs.unlink(target);
 
-if (path.exists(target)) fs.unlink(target);
-
-gd.openPng(
+    gd.openPng(
 	source,
 	function(png, path) {
 		if(png) {
@@ -37,6 +38,6 @@ gd.openPng(
 			target_png.savePng(target, 1, gd.noop);
 		}
 	}
-);
+    );
 
 That's all folks!
