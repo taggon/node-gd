@@ -1,11 +1,10 @@
-#!/usr/local/bin/node
-var sys  = require('sys');
+#!/usr/bin/node
 var fs   = require('fs');
 var path = require('path');
 var gd   = require('./gd');
 
-var source = './funnyfog.png';
-var target = './funnyfog.thumb.png';
+var source = './test.png';
+var target = './test.thumb.png';
 
 if (path.exists(target)) fs.unlink(target);
 

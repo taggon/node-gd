@@ -14,10 +14,16 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 */
 
-var
-	sys  = require('sys'),
-	fs   = require('fs'),
-	bind = require('./gd_bindings');
+var fs   = require('fs');
+
+try {
+    // node 0.6+
+    var bind = require('./build/Release/gd_bindings');
+} catch (e) {
+    // node 0.4.x
+    var bind = require('./build/default/gd_bindings');
+}
+
 
 for(var p in bind) {
 	if (bind[p] !== undefined) exports[p] = bind[p];
@@ -35,6 +41,8 @@ var formats = {
 
 function open_func(format, len) {
 	return function() {
+		if (!(arguments instanceof Array))
+    		    arguments = Array.prototype.slice.call(arguments);
 		var args     = [].concat(arguments);
 		var filename = args.shift();
 		var callback = args[len-1];
@@ -59,7 +67,6 @@ function save_func(format, len) {
 		var args     = [].concat(arguments);
 		var filename = args.shift();
 		var callback = args[len-1];
-
 		if (typeof callback != 'function') {
 			return this[format].apply(this, arguments);
 		}
