@@ -18,10 +18,10 @@ npm install gd
 ## Using GD
 
 app.js:
+    
     var fs   = require('fs');
     var path = require('path');
     var gd   = require('gd');
-    
     var source = './test.png';
     var target = './test.thumb.png';
 
