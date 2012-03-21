@@ -2,4 +2,4 @@ GD bindings for Node.js
 ==================================
 GD graphic library bindings for Node.js supporting asynchronous I/O.
 
-Tested with Node v0.4.6
+Tested with Node v0.4.6 & v0.6.6 (by Dudochkin Victor <blacksmith@gogoo.ru>)

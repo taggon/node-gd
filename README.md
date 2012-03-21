@@ -1,7 +1,25 @@
-#!/usr/bin/node
+#GD bindings for Node.js
+*GD graphic library bindings for Node.js supporting asynchronous I/O written in C/C++*.
+
+Tested with Node v0.4.6 & v0.6.6 (by Dudochkin Victor <blacksmith@gogoo.ru>)
+
+## Install:
+### Using npm
+
+npm install gd
+
+### From sources
+1) go to the directory with GD (this library :) )
+
+2) execute `node-waf configure build`
+
+3)  Put it in node_modules.
+
+## Using GD
+
 var fs   = require('fs');
 var path = require('path');
-var gd   = require('./gd');
+var gd   = require('gd');
 
 var source = './test.png';
 var target = './test.thumb.png';
@@ -20,3 +38,5 @@ gd.openPng(
 		}
 	}
 );
+
+That's all folks!
