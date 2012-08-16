@@ -62,6 +62,8 @@ function open_func(format, len) {
 
 function save_func(format, len) {
 	format = format.toLowerCase();
+	if (!(arguments instanceof Array))
+		arguments = Array.prototype.slice.call(arguments);
 
 	return function() {
 		var args     = [].concat(arguments);
