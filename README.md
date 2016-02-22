@@ -1,4 +1,6 @@
-#GD bindings for Node.js
+## This repository is no longer maintained. You may want to see [y-a-v-a's node-gd](https://github.com/y-a-v-a/node-gd), a still active forked project.
+
+# GD bindings for Node.js
 *GD graphic library bindings for Node.js supporting asynchronous I/O written in C/C++*.
 
 Tested with Node v0.4.6 & v0.6.6 (by Dudochkin Victor <blacksmith@gogoo.ru>)
